@@ -1,5 +1,6 @@
 <script setup>
 import HeroVue from '../components/HeroVue.vue';
+
 </script>
 
 <template>
