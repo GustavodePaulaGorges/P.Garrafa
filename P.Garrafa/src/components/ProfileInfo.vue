@@ -4,27 +4,20 @@
   >
     <div class="px-6">
       <div class="flex flex-wrap justify-center">
-        <div class="w-full flex justify-center">
-          <div class="relative">
-            <img
-              src="https://github.com/creativetimofficial/soft-ui-dashboard-tailwind/blob/main/build/assets/img/team-2.jpg?raw=true"
-              class="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
-            />
-          </div>
-        </div>
+        <div class="w-full flex justify-center"></div>
         <div class="w-full text-center mt-20">
           <div class="flex justify-center lg:pt-4 pt-8 pb-0">
             <div class="p-3 text-center">
               <span
                 class="text-xl font-bold block uppercase tracking-wide text-slate-700"
-                >2</span
+                >{{ pending }}</span
               >
               <span class="text-sm text-slate-400">Pedidos pendentes</span>
             </div>
             <div class="p-3 text-center">
               <span
                 class="text-xl font-bold block uppercase tracking-wide text-slate-700"
-                >6</span
+                >0</span
               >
               <span class="text-sm text-slate-400">Pedidos enviados</span>
             </div>
@@ -32,7 +25,7 @@
             <div class="p-3 text-center">
               <span
                 class="text-xl font-bold block uppercase tracking-wide text-slate-700"
-                >3</span
+                >0</span
               >
               <span class="text-sm text-slate-400">Pedidos avaliados</span>
             </div>
@@ -75,6 +68,10 @@ export default {
   props: {
     user: {
       type: Object,
+      required: true,
+    },
+    pending: {
+      type: Number,
       required: true,
     },
   },

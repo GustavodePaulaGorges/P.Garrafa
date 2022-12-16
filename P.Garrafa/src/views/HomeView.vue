@@ -34,7 +34,8 @@ if (!$cookies.get("token")) {
           </h1>
           <div class="flex justify-center">
             <button
-              class="bg-blue-500 shadow hover:shadow-lg rounded-xl p-1 pr-3 pl-3 text-slate-100 font-semibold"
+              disabled
+              class="bg-gray-500 shadow hover:shadow-lg rounded-xl p-1 pr-3 pl-3 text-slate-100 font-semibold"
             >
               Customizar
             </button>
@@ -55,6 +56,11 @@ if (!$cookies.get("token")) {
           <div class="flex justify-center">
             <button
               class="bg-blue-500 shadow hover:shadow-lg rounded-xl p-1 pr-3 pl-3 text-slate-100 font-semibold"
+              @click="
+                () => {
+                  $router.push('/customize');
+                }
+              "
             >
               Customizar
             </button>
@@ -74,7 +80,8 @@ if (!$cookies.get("token")) {
           </h1>
           <div class="flex justify-center">
             <button
-              class="bg-blue-500 shadow hover:shadow-lg rounded-xl p-1 pr-3 pl-3 text-slate-100 font-semibold"
+              disabled
+              class="bg-gray-500 shadow hover:shadow-lg rounded-xl p-1 pr-3 pl-3 text-slate-100 font-semibold"
             >
               Customizar
             </button>
