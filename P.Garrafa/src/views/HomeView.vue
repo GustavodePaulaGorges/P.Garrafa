@@ -1,8 +1,16 @@
 <script setup>
 import HeroVue from "../components/HeroVue.vue";
+// import router for redirect
+import { useRouter } from "vue-router";
+const $router = useRouter();
+
+if (!$cookies.get("token")) {
+  $router.push("/");
+}
 </script>
 
 <template>
+  <NavBarVue />
   <HeroVue />
   <main class="flex w-full h-screen items-center justify-center">
     <div class="flex flex-col w-full h-screen p-5">

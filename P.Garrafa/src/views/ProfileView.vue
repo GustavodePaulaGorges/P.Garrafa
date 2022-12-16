@@ -1,8 +1,9 @@
 <template>
+  <NavBarVue />
   <main class="flex w-full h-screen">
     <div class="w-1/3 p-2 flex justify-center items-center">
       <!-- Aqui vem o card com as informações do perfil -->
-      <ProfileInfo :user="{}" />
+      <ProfileInfo :user="user" />
     </div>
     <div class="w-2/3 p-4">
       <!-- Aqui vem o card com as informações de compra do perfil + artes -->
@@ -21,12 +22,30 @@
 <script>
 import ProfileInfo from "../components/ProfileInfo.vue";
 import BottleComp from "../components/BottleComp.vue";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 export default {
   name: "ProfileView",
   components: {
     ProfileInfo,
     BottleComp,
+  },
+  data() {
+    return {
+      user: {},
+    };
+  },
+  async created() {
+    const token = this.$cookies.get("token");
+    if (!token) {
+      this.$router.push("/");
+    }
+    const decoded = jwt_decode(token);
+    const id = decoded.user_id;
+    const response = await axios.get(`http://localhost:8000/users/${id}/`);
+    console.log(id, decoded, response);
+    this.user = response.data;
   },
 };
 </script>

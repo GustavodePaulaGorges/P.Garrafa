@@ -41,11 +41,15 @@
       </div>
       <div class="text-center mt-2">
         <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">
-          Vínicius Dácio
+          {{ user.first_name }} {{ user.last_name }}
         </h3>
         <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
           <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i
-          >Joinville, Santa Catarina
+          >{{ user.endereco }}
+        </div>
+        <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+          <i class="fas fa-map-marker-alt mr-2 text-slate-300 opacity-75"></i
+          >{{ user.telefone }}
         </div>
       </div>
       <div class="mt-6 py-6 border-t border-slate-200 text-center">
